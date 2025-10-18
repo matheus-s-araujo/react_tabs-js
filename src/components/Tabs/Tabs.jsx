@@ -3,6 +3,10 @@ import cn from 'classnames';
 export function Tabs({ tabs, activeTabId, onTabSelected }) {
   const activeTab = tabs.find(tab => tab.id === activeTabId) || tabs[0];
 
+  if (tabs.length <= 0) {
+    return <p>No tabs available</p>;
+  }
+
   return (
     <div data-cy="TabsComponent">
       <div className="tabs is-boxed">
